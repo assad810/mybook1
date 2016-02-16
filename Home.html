@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>
+User Registration
+</title>
+<style>
+#header
+{
+ background-color:#6633ff;
+ text-align:right;
+ padding:1px;
+ 
+ }
+
+#body
+{
+  background-color:#eeeeee;
+  text-align:right;
+  padding:106;
+  
+}
+
+
+
+
+<script>
+ function submit_form() {
+  
+  var pass=document.getElementById('password').value;
+  var pass_confirm=document.getElementById('confirm_password').value;
+  var f_name=document.getElementById('first_name').value;
+  var l_name=document.getElementById('last_name').value;
+  if(f_name=="")
+  {
+   alert("please enter first name");
+  }
+  else if(l_name=="") 
+  {
+   alert("please enter last name");
+  }
+  else if(pass!=pass_confirm) {
+   
+   alert("Passwords do not match");
+  }
+  else {
+   
+   document.register_form.submit();
+  }
+ }
+</script>
+</style>
+</head>
+<body>
+<div id="header">
+<form name="login" method="POST" action="login.php">
+
+<h4>
+User Name: 
+<input type="text" name="user_name" value="" size="25" maxlength="15" placeholder="user name"/>
+Password:  <input type="password" name="password"  value="" size="25" maxlength="15" placeholder="password"/>
+<input type="submit" value="Log in">
+</h4>
+</form>
+</div>
+
+<div id="body">
+<h2>Registration Form</h2> 
+
+<form name="register_form" method="POST" action="register.php"> 
+ 
+ First name: <input id="first_name" type="text" name="first_name" value="" size="25" maxlength="15" placeholder="First name"/>
+ <br>
+ 
+  <br>
+  Last name: <input id="last_name" type="text" name="last_name" value="" size="25" maxlength="15" placeholder="Last name"/>
+ <br>
+ 
+ <br>
+ User name: <input id="user_name" type="text" name="user_name" value="" size="25" maxlength="15" placeholder="user name"/>
+ <br>
+ 
+ <br>
+ Password:  <input id="password" type="password" name="password" value="" size="25" maxlength="15" placeholder="password"/>
+ <br>
+ 
+ <br>
+         Confirm Password:<input id="confirm_password" type="password" name="confirm_password" value="" size="25" maxlength="15" placeholder="confirm password"/>
+ 
+ <br>
+ 
+ <br>
+ <input type="submit" value="Register" >
+ <input type="submit" value="sign up">
+ </form>
+</div>
+</body>
+
+</html>
